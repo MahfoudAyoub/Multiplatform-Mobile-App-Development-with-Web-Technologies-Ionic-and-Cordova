@@ -7,20 +7,30 @@ import { HomePage } from '../pages/home/home';
 import { AboutPage } from "../pages/about/about";
 import { MenuPage } from "../pages/menu/menu";
 import { ContactPage } from "../pages/contact/contact";
-
+import { HttpModule } from "@angular/http";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { DishProvider } from '../providers/dish/dish';
+import { LeaderProvider } from '../providers/leader/leader';
+import { PromotionProvider } from '../providers/promotion/promotion';
+import { ProcessHttpmsgProvider } from '../providers/process-httpmsg/process-httpmsg';
+import { baseURL } from "../shared/baseurl";
 
 @NgModule({
   declarations: [MyApp, HomePage, AboutPage, MenuPage, ContactPage],
-  imports: [BrowserModule, IonicModule.forRoot(MyApp)],
+  imports: [BrowserModule, IonicModule.forRoot(MyApp), HttpModule],
   bootstrap: [IonicApp],
   entryComponents: [MyApp, HomePage, AboutPage, MenuPage, ContactPage],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
+    { provide: 'BaseURL', useValue: baseURL },
+    DishProvider,
+    LeaderProvider,
+    PromotionProvider,
+    ProcessHttpmsgProvider,
   ],
 })
 export class AppModule {}
