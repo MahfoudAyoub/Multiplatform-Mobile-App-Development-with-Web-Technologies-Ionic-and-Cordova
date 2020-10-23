@@ -9,6 +9,7 @@ import { MenuPage } from "../pages/menu/menu";
 import { ContactPage } from "../pages/contact/contact";
 import { DishdetailPage } from "../pages/dishdetail/dishdetail";
 import { FavoritesPage } from "../pages/favorites/favorites";
+import { ReservationPage } from "../pages/reservation/reservation";
 import { HttpModule } from "@angular/http";
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -29,6 +30,7 @@ import { FavoriteProvider } from '../providers/favorite/favorite';
     MenuPage,
     ContactPage,
     FavoritesPage,
+    ReservationPage,
   ],
   imports: [BrowserModule, IonicModule.forRoot(MyApp), HttpModule],
   bootstrap: [IonicApp],
@@ -40,6 +42,7 @@ import { FavoriteProvider } from '../providers/favorite/favorite';
     MenuPage,
     ContactPage,
     FavoritesPage,
+    ReservationPage,
   ],
   providers: [
     StatusBar,
