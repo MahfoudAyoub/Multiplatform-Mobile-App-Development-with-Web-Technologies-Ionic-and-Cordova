@@ -1,8 +1,10 @@
 import { Component, Inject } from "@angular/core";
-import { IonicPage, NavController, NavParams,ToastController } from "ionic-angular";
+import { IonicPage, NavController, NavParams,ToastController,ActionSheetController  } from "ionic-angular";
 import { Dish } from "../../shared/dish";
+import { CommentPage } from "../comment/comment";
 import { Comment } from "../../shared/comment";
 import { FavoriteProvider } from "../../providers/favorite/favorite";
+import { Nav, Platform, ModalController } from "ionic-angular";
 /**
  * Generated class for the DishdetailPage page.
  *
@@ -27,7 +29,9 @@ export class DishdetailPage {
     public navParams: NavParams,
     @Inject("BaseURL") private BaseURL,
     private favoriteservice: FavoriteProvider,
-    private toastCtrl: ToastController
+    private toastCtrl: ToastController,
+    public actionSheetController: ActionSheetController,
+    public modalCtrl: ModalController
   ) {
     this.dish = navParams.get("dish");
     this.favorite = favoriteservice.isFavorite(this.dish.id);
@@ -36,7 +40,37 @@ export class DishdetailPage {
     let total = 0;
     this.dish.comments.forEach((comment) => (total += comment.rating));
     this.avgstars = (total / this.numcomments).toFixed(2);
-    
+  }
+
+  async presentActionSheet() {
+    const actionSheet = await this.actionSheetController.create({
+      title: "Select Actions",
+      buttons: [
+        {
+          text: "Add To Favorite",
+          icon: "heart",
+          handler: () => {
+            this.addToFavorites();
+          },
+        },
+        {
+          text: "Add Comment",
+          icon: "add",
+          handler: () => {
+            this.openComment();
+          },
+        },
+        {
+          text: "Cancel",
+          icon: "close",
+          role: "cancel",
+          handler: () => {
+            console.log("Cancel clicked");
+          },
+        },
+      ],
+    });
+    await actionSheet.present();
   }
 
   addToFavorites() {
@@ -49,6 +83,11 @@ export class DishdetailPage {
         duration: 3000,
       })
       .present();
+  }
+
+  openComment() {
+    let modal = this.modalCtrl.create(CommentPage);
+    modal.present();
   }
 
   ionViewDidLoad() {

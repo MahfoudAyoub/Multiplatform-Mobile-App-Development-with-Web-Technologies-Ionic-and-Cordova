@@ -20,6 +20,8 @@ import { PromotionProvider } from '../providers/promotion/promotion';
 import { ProcessHttpmsgProvider } from '../providers/process-httpmsg/process-httpmsg';
 import { baseURL } from "../shared/baseurl";
 import { FavoriteProvider } from '../providers/favorite/favorite';
+import { CommentPage } from "../pages/comment/comment";
+
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import { FavoriteProvider } from '../providers/favorite/favorite';
     ContactPage,
     FavoritesPage,
     ReservationPage,
+    CommentPage,
   ],
   imports: [BrowserModule, IonicModule.forRoot(MyApp), HttpModule],
   bootstrap: [IonicApp],
@@ -43,6 +46,7 @@ import { FavoriteProvider } from '../providers/favorite/favorite';
     ContactPage,
     FavoritesPage,
     ReservationPage,
+    CommentPage,
   ],
   providers: [
     StatusBar,
