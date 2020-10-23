@@ -8,6 +8,7 @@ import { AboutPage } from "../pages/about/about";
 import { MenuPage } from "../pages/menu/menu";
 import { ContactPage } from "../pages/contact/contact";
 import { DishdetailPage } from "../pages/dishdetail/dishdetail";
+import { FavoritesPage } from "../pages/favorites/favorites";
 import { HttpModule } from "@angular/http";
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -20,15 +21,31 @@ import { baseURL } from "../shared/baseurl";
 import { FavoriteProvider } from '../providers/favorite/favorite';
 
 @NgModule({
-  declarations: [MyApp, HomePage, AboutPage,DishdetailPage, MenuPage, ContactPage],
+  declarations: [
+    MyApp,
+    HomePage,
+    AboutPage,
+    DishdetailPage,
+    MenuPage,
+    ContactPage,
+    FavoritesPage,
+  ],
   imports: [BrowserModule, IonicModule.forRoot(MyApp), HttpModule],
   bootstrap: [IonicApp],
-  entryComponents: [MyApp, HomePage, AboutPage,DishdetailPage, MenuPage, ContactPage],
+  entryComponents: [
+    MyApp,
+    HomePage,
+    AboutPage,
+    DishdetailPage,
+    MenuPage,
+    ContactPage,
+    FavoritesPage,
+  ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    { provide: 'BaseURL', useValue: baseURL },
+    { provide: "BaseURL", useValue: baseURL },
     DishProvider,
     LeaderProvider,
     PromotionProvider,
