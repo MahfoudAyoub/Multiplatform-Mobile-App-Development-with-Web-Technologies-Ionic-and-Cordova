@@ -15,6 +15,10 @@ import { IonicStorageModule } from "@ionic/storage";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { LocalNotifications } from "@ionic-native/local-notifications/ngx";
+import { EmailComposer } from "@ionic-native/email-composer/ngx";
+
+
 import { DishProvider } from '../providers/dish/dish';
 import { LeaderProvider } from '../providers/leader/leader';
 import { PromotionProvider } from '../providers/promotion/promotion';
@@ -62,6 +66,8 @@ import { LoginPage } from "../pages/login/login";
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     { provide: "BaseURL", useValue: baseURL },
+    LocalNotifications,
+    EmailComposer,
     DishProvider,
     LeaderProvider,
     PromotionProvider,
