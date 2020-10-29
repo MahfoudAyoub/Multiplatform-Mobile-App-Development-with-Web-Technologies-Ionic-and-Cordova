@@ -15,9 +15,11 @@ import { IonicStorageModule } from "@ionic/storage";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { LocalNotifications } from "@ionic-native/local-notifications/ngx";
-import { EmailComposer } from "@ionic-native/email-composer/ngx";
-
+import { LocalNotifications } from "@ionic-native/local-notifications";
+import { EmailComposer } from "@ionic-native/email-composer";
+import { SocialSharing } from "@ionic-native/social-sharing";
+import { Camera } from "@ionic-native/camera";
+import { Network } from "@ionic-native/network";
 
 import { DishProvider } from '../providers/dish/dish';
 import { LeaderProvider } from '../providers/leader/leader';
@@ -27,6 +29,7 @@ import { baseURL } from "../shared/baseurl";
 import { FavoriteProvider } from '../providers/favorite/favorite';
 import { CommentPage } from "../pages/comment/comment";
 import { LoginPage } from "../pages/login/login";
+import { RegisterPage } from "../pages/register/register";
 
 
 @NgModule({
@@ -41,6 +44,7 @@ import { LoginPage } from "../pages/login/login";
     ReservationPage,
     CommentPage,
     LoginPage,
+    RegisterPage,
   ],
   imports: [
     BrowserModule,
@@ -60,6 +64,7 @@ import { LoginPage } from "../pages/login/login";
     ReservationPage,
     CommentPage,
     LoginPage,
+    RegisterPage,
   ],
   providers: [
     StatusBar,
@@ -73,6 +78,9 @@ import { LoginPage } from "../pages/login/login";
     PromotionProvider,
     ProcessHttpmsgProvider,
     FavoriteProvider,
+    SocialSharing,
+    Camera,
+    Network,
   ],
 })
 export class AppModule {}

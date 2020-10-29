@@ -84,4 +84,8 @@
     <engine name="android" spec="~6.1.2" />
     <plugin name="de.appplant.cordova.plugin.local-notification" spec="~0.8.5" />
     <plugin name="cordova-plugin-email" spec="~1.2.7" />
+    <plugin name="cordova-plugin-camera" spec="~2.4.1" />
+    <plugin name="cordova-plugin-x-socialsharing" spec="~6.0.2" />
+    <plugin name="cordova-plugin-network-information" spec="~2.0.2" />
+    <plugin name="mx.ferreyra.callnumber" spec="~0.0.2" />
 </widget>

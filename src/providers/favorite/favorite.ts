@@ -6,7 +6,7 @@ import { Observable } from "rxjs/Observable";
 import { DishProvider } from "../dish/dish";
 import { Storage } from "@ionic/storage";
 import { map } from "rxjs/operators";
-import { LocalNotifications } from "@ionic-native/local-notifications/ngx";
+import { LocalNotifications } from "@ionic-native/local-notifications";
 /*
   Generated class for the FavoriteProvider provider.
 
